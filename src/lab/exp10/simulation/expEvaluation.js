@@ -1,3 +1,4 @@
+
 window.model = {	
 	a: '',
 	b: '',
@@ -850,7 +851,7 @@ window.view = {
 			model.isBracket = false
 		}
 		else {
-			if ( equation.length > 2 ) {
+			if ( equation.length > 2) {
 				var eq = equation.substring(this.starting, this.ending + 1)
 				var operator = ''
 				for ( var i = 0 ; i < eq.length ; i ++ ) {
@@ -859,11 +860,13 @@ window.view = {
 						break
 					}
 				}
+				if(operator != ''){
 				var span = document.createElement('span')
 				span.innerHTML =  this.step - 1 + ' ) ' + 'Here ' + operator + ' have higher precedence than other operators. So, it will be solved first.<br>'
 				span.className = 'illustrationText'
 				child.appendChild(span)	
 			}	
+		}
 		}
 		parent.appendChild(child)
 	},
