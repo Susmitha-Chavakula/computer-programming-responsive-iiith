@@ -173,7 +173,7 @@ window.view = {
 	        else if (element[1].checked) {
 			document.getElementById('userInput').removeAttribute("disabled")
 			this.enableButton( 'btnStart' )
-				this.changeClass( 'btnStart', 'startButton button' )
+			this.changeClass( 'btnStart', 'startButton button' )
 		}
 		else
 			alert('number of inputs must be equal to the size of the array')	
