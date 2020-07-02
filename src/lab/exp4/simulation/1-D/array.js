@@ -86,9 +86,9 @@ window.view = {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked ) 
 			this.generateRandomNumbers()
-		else if (element[1].checked) {
-			document.getElementById('userInput').removeAttribute("disabled")
-			this.getUserInput()
+		else if (element[1].checked)  {
+			 document.getElementById('userInput').removeAttribute("disabled")
+			 this.getUserInput()
 		}
 	},
 	createBoxes: function() {
@@ -171,9 +171,9 @@ window.view = {
 			} 
 		}
 	        else if (element[1].checked) {
-			document.getElementById('userInput').removeAttribute("disabled")
-			this.enableButton( 'btnStart' )
-			this.changeClass( 'btnStart', 'startButton button' )
+			 document.getElementById('userInput').removeAttribute("disabled")
+			 this.enableButton( 'btnStart' )
+			 this.changeClass( 'btnStart', 'startButton button' )
 		}
 		else
 			alert('number of inputs must be equal to the size of the array')	
