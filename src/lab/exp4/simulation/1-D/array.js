@@ -76,6 +76,7 @@ window.view = {
 			this.numbers.push(String(random))
 		}
 	},
+
 	getUserInput: function() {
 		var inputValue = document.getElementById('userInput').value
 		inputValue = inputValue.replace(/\s/g, ',')
@@ -83,10 +84,12 @@ window.view = {
 	},
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
-		if ( element[0].checked )
+		if ( element[0].checked ) 
 			this.generateRandomNumbers()
-		else if (element[1].checked)
+		else if (element[1].checked) {
+			document.getElementById('userInput').removeAttribute("disabled")
 			this.getUserInput()
+		}
 	},
 	createBoxes: function() {
 		for ( i = 0 ; i < this.numbers.length ; i++ ) {
@@ -161,10 +164,16 @@ window.view = {
 				this.convertFromStringToNumber()
 				this.disableButton('btnStart')
 				this.changeClass( 'btnStart', 'startButton buttonDisable' )
+				document.getElementById('userInput').setAttribute("disabled", false)
 				this.enableButton('btnNext')
 				this.changeClass( 'btnNext', 'button nextButton' )
 				this.changeClass( 'line1' , 'showDivInRed')
 			} 
+		}
+	        else if (element[1].checked) {
+			document.getElementById('userInput').removeAttribute("disabled")
+			this.enableButton( 'btnStart' )
+				this.changeClass( 'btnStart', 'startButton button' )
 		}
 		else
 			alert('number of inputs must be equal to the size of the array')	
