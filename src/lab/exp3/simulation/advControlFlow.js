@@ -167,6 +167,11 @@ window.view = {
     	this.clearDivs()
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
+		if ( inputValue < 0 || inputValue > 20)
+		{
+			alert('Invalid Input');
+		}
+		else {
 		if (selected_loop === 'for' && inputValue !== '' && !isNaN(model.inp) )
 		{
 			this.displayLoop('forLoopContent', 'codeContentFor1')
@@ -186,7 +191,7 @@ window.view = {
 		this.disableButton('loopList')
 		this.changeClass( 'loopList', 'buttonDisable loopList')
 		this.disableButton('simpleLoopInput')
-	},
+	}},
 	updateModelAndShowResult: function() {
 		if( model.inp >= 1)
 		{	
